@@ -156,6 +156,11 @@ class ClipboardManager(
         } else {
             systemClipboardManager.setOrClearPrimaryClip(item?.toClipData(appContext))
         }
+        item?.text?.let { clipText ->
+            if (clipText.isNotBlank()) {
+                dev.patrickgold.florisboard.ime.voice.AvfBridge.syncClipboardToAvf(clipText)
+            }
+        }
     }
 
     /**

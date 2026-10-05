@@ -59,6 +59,7 @@ import dev.patrickgold.florisboard.R
 import dev.patrickgold.florisboard.app.devtools.DevtoolsOverlay
 import dev.patrickgold.florisboard.ime.ImeUiMode
 import dev.patrickgold.florisboard.ime.clipboard.ClipboardInputLayout
+import dev.patrickgold.florisboard.ime.voice.VoiceInputLayout
 import dev.patrickgold.florisboard.ime.keyboard.ProvideKeyboardRowBaseHeight
 import dev.patrickgold.florisboard.ime.keyboard3.LocalImeController
 import dev.patrickgold.florisboard.ime.keyboard3.interaction.InteractionKind
@@ -232,6 +233,7 @@ private fun ImeInnerWindow() {
                 ImeUiMode.TEXT -> TextInputLayout()
                 ImeUiMode.MEDIA -> ProvideActualLayoutDirection { MediaInputLayout() }
                 ImeUiMode.CLIPBOARD -> ProvideActualLayoutDirection { ClipboardInputLayout() }
+                ImeUiMode.VOICE -> ProvideActualLayoutDirection { VoiceInputLayout() }
             }
             ImeSystemUiFloating()
         }
